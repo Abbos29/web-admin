@@ -1,0 +1,19 @@
+.form {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.size {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+
+.wrapper {
+    padding-top: 50px;
+    background: linear-gradient(135deg, #00bcd4, #3f51b5); /* Переливающийся градиент */
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
