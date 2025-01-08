@@ -5,11 +5,13 @@
 /* Добавьте в style.css */
 .wrapper {
   background: linear-gradient(135deg, #00bcd4, #3f51b5); /* Переливающийся градиент */
-  min-height: 100vh;
+  background-attachment: fixed;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 70px; /* Чтобы кнопка внизу не перекрывала контент */
+
 }
 
 button {
