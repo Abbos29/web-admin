@@ -25,9 +25,13 @@ export class Api {
     if (res.ok) {
       return res.json();
     }
+
     if (res.status === 401 || res.status === 403) {
-      localStorage.removeItem("token");
+      console.warn("Token has expired or is invalid. Removing token from localStorage.");
+      localStorage.removeItem("access-token");
+      this.token = null;
     }
+
     const errorText = await res.text();
     throw new Error(`Error ${res.status}: ${errorText}`);
   }
@@ -72,7 +76,6 @@ export class Api {
       },
     }).then(this.getJsonResponse);
   }
-
 
   async getSneakerById(id: number) {
     return fetch(`${this.URL}sneakers/sneakers/${id}`, {
